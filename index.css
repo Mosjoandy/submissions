@@ -40,7 +40,10 @@ a:hover {
     border: 1px solid darkgray;
     transition: 200ms ease-in all;
     width: 100%;
+    align-content: center;
+
 }
+
 #add-user:hover {
     transform: scale(1.2);
 }
@@ -53,6 +56,27 @@ a:hover {
     border: 1px solid green;
 }
 
+.card {
+    height: 500px;
+    padding: 3rem 3rem;
+}
+
+.card-body {
+    padding: 0 0 0 0;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+}
+
 #click-value4 {
     color: red;
+}
+
+.thanks {
+    display: inline-block;
+    position: absolute;
+    bottom: 8vh;
+    width: 80%;
+
 }
