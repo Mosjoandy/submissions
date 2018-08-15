@@ -59,7 +59,6 @@ $("#click-button1").on("click", function () {
 });
 
 database.ref("counterThumb").on("value", function (snapshot) {
-    console.log(snapshot.val());
     $("#click-value1").text(snapshot.val().counterThumb);
     counterThumb = snapshot.val().counterThumb;
 });
@@ -73,7 +72,6 @@ $("#click-button2").on("click", function () {
 });
 
 database.ref("counterClap").on("value", function (snapshot) {
-    console.log(snapshot.val());
     $("#click-value2").text(snapshot.val().counterClap);
     counterClap = snapshot.val().counterClap;
 });
@@ -87,7 +85,6 @@ $("#click-button3").on("click", function () {
 });
 
 database.ref("counterRock").on("value", function (snapshot) {
-    console.log(snapshot.val());
     $("#click-value3").text(snapshot.val().counterRock);
     counterRock = snapshot.val().counterRock;
 });
@@ -101,7 +98,6 @@ $("#click-button4").on("click", function () {
 });
 
 database.ref("counterFives").on("value", function (snapshot) {
-    console.log(snapshot.val());
     $("#click-value4").text(snapshot.val().counterFives);
     counterFives = snapshot.val().counterFives;
 });
