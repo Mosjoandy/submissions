@@ -21,7 +21,7 @@ a:hover {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 75%;
+    width: 100%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     transition: 200ms ease-in all
@@ -38,7 +38,8 @@ a:hover {
 
 #add-user {
     border: 1px solid darkgray;
-    transition: 200ms ease-in all
+    transition: 200ms ease-in all;
+    width: 100%;
 }
 #add-user:hover {
     transform: scale(1.2);
