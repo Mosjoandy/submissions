@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+    // console.log( "ready!" );
+});
 
 // Initialize Firebase
 var config = {
@@ -18,11 +21,7 @@ var counterClap = 0;
 var counterRock = 0;
 var counterFives = 0;
 
-$("#thanks").hide();
-
-$("#add-user").on("click", function (event) {
-
-    event.preventDefault()
+function crushIt() {
 
     $("#thanks").fadeIn();
     $("#showAll").hide();
@@ -47,6 +46,25 @@ $("#add-user").on("click", function (event) {
     $("#name-input").val("");
     $("#email-input").val("");
     $("#comment-input").val("");
+
+}
+
+$(document).ready(function () {
+    $("#comment-input").keydown(function (event) {
+        if (event.keyCode == 13) {
+            crushIt()
+            return false;
+        }
+    });
+});
+
+//Hide THank You Div
+$("#thanks").hide();
+
+$("#add-user").on("click", function (event) {
+
+    event.preventDefault()
+    crushIt()
 
 });
 

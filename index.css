@@ -24,16 +24,21 @@ a:hover {
     width: 75%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    transition: 200ms ease-in all
+}
+
+#emoji {
+    transition: 200ms ease-in all
 }
 
 #emoji:hover {
     border: 1px solid green;
     transform: scale(1.2);
-    
 }
 
 #add-user {
     border: 1px solid darkgray;
+    transition: 200ms ease-in all
 }
 #add-user:hover {
     transform: scale(1.2);
