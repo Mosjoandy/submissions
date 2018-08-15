@@ -13,26 +13,69 @@
 
 <body background="doodles.png">
 
-    <div class="container">
+    <div id="thanks">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron border bg-light">
+                        <hr />
+                        <h1 class="text-center bg-light">Thank You!</h1>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <div class="row align-items-center">
+    <div id="showAll" class="container">
+
+        <div class="row align-items-center mt-4">
             <div class="col-lg-6 mx-auto">
-                <div class="jumbotron border bg-light mt-4 text-center">
+                <div class="card pt-5 pb-5 pr-5 pl-5 border bg-light text-center">
                     <h1>
                         <b>Recieve our contact info and Résumés</b>
                     </h1>
                     <hr />
-                    <h3> We will send you an email with our résumés and contact information! Thank you for checking out our project
+                    <h3>Thank you for checking out our project
                     </h3>
                     <hr />
-                    <h3>Thumbs or Double Thumbs For Us!</h3>
+                    <h2>
+                        <b>Rate our project:</h2>
+                    </b>
                     <div>
-                        <div>
-                            <a href="#" id="click-button1"><h1>👍</h1></a>
-                            <a href="#" id="click-button1"><h1>👏</h1></a>
-                            <a href="#" id="click-button1"><h1>🤟</h1></a>
-                            <a href="#" id="click-button1"><h1>🙌</h1></a>
-
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="#" id="click-button1">
+                                    <h1 class="border pt-3 pb-3" id="emoji">👍</h1>
+                                    <h1>
+                                        <span id="click-value1"></span>
+                                    </h1>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="click-button2">
+                                    <h1 class="border pt-3 pb-3" id="emoji">👏</h1>
+                                    <h1>
+                                        <span id="click-value2"></span>
+                                    </h1>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="click-button3">
+                                    <h1 class="border pt-3 pb-3" id="emoji">🤟</h1>
+                                    <h1>
+                                        <span id="click-value3"></span>
+                                    </h1>
+                                </a>
+                            </div>
+                            <div class="col-md-3">
+                                <a href="#" id="click-button4">
+                                    <h1 class="border pt-3 pb-3" id="emoji">🙌</h1>
+                                    <h1>
+                                        <span id="click-value4"></span>
+                                    </h1>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -40,7 +83,7 @@
             </div>
 
             <div class="col-lg-6 mx-auto">
-                <div class="card bg-light card-default pr-5 pl-5 pt-2 mt-4">
+                <div class="card bg-light pr-5 pl-5 pt-4">
                     <div class="card-heading">
                         <h3 class="card-title">Enter info here:</h3>
                     </div>
@@ -59,7 +102,7 @@
                                 <label for="comment-input">Comments:</label>
                                 <textarea class="form-control" id="comment-input" rows="5"></textarea>
                             </div>
-                            <button class="btn btn-default pr-5 pl-5" id="add-user" type="submit">Submit</button>
+                            <button class="btn btn-default pr-5 pl-5" id="add-user" type="submit" onclick="RunLoading()">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -69,64 +112,7 @@
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
-    <script>
-
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCs0mx4Dsdn3jOGwINSK5gcsTOaKq01lcQ",
-            authDomain: "submissionform-55850.firebaseapp.com",
-            databaseURL: "https://submissionform-55850.firebaseio.com",
-            projectId: "submissionform-55850",
-            storageBucket: "submissionform-55850.appspot.com",
-            messagingSenderId: "550850797250"
-        };
-        firebase.initializeApp(config);
-
-        var database = firebase.database();
-
-        // Initial Values
-        var name = "";
-        var email = "";
-        var comment = "";
-        var clickCounter = 0;
-
-        $("#add-user").on("click", function (event) {
-
-            name = $("#name-input").val().trim();
-            email = $("#email-input").val().trim();
-            comment = $("#comment-input").val().trim();
-
-            database.ref().set({
-                name: name,
-                email: email,
-                comment: comment
-            });
-        });
-
-        $("#click-button1").on("click", function () {
-            clickCounter++;
-            database.ref().set({
-                clickCount: clickCounter
-            });
-        });
-
-        $("#click-button2").on("click", function () {
-            clickCounter + 2;
-            database.ref().set({
-                clickCount: clickCounter
-            });
-        });
-
-        database.ref().on("value", function (snapshot) {
-            console.log(snapshot.val());
-            $("#click-value").text(snapshot.val().clickCount);
-            clickCounter = snapshot.val().clickCount;
-        }, function (errorObject) {
-            console.log("The read failed: " + errorObject.code);
-        });
-
-    </script>
-
+    <script src="./logic.js" rel="javascript/text"></script>
 </body>
 
 </html>
