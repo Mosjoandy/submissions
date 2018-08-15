@@ -22,8 +22,11 @@ $("#thanks").hide();
 
 $("#add-user").on("click", function (event) {
 
+    event.preventDefault()
+
     $("#thanks").fadeIn();
     $("#showAll").hide();
+
     setTimeout(function () {
         $("#thanks").fadeOut();
         $("#showAll").fadeIn();
