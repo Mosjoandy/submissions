@@ -36,12 +36,9 @@
                         <b>We'll send our info!</b>
                     </h1>
                     <hr />
-                    <h3>Thank you for checking out our project
+                    <h3 class="mb-4">
+                        Did you like our game?
                     </h3>
-                    <hr />
-                    <h2 class="mb-4">
-                        <b>Rate our project:</b>
-                    </h2>
 
                     <div>
                         <div class="row mb-3">
@@ -53,7 +50,7 @@
                             </div>
                             <div class="col-md-3">
                                 <a href="#" id="click-button2">
-                                    <h1 class="border pt-3 pb-3" id="emoji">👏</h1>
+                                    <h1 class="border pt-3 pb-3" id="emoji">👌</h1>
                                 </a>
                                 <h1 id="click-value2"></h1>
                             </div>
@@ -65,12 +62,16 @@
                             </div>
                             <div class="col-md-3">
                                 <a href="#" id="click-button4">
-                                    <h1 class="border pt-3 pb-3" id="emoji">🙌</h1>
+                                    <h1 class="border pt-3 pb-3" id="emoji">👎</h1>
                                 </a>
                                 <h1 id="click-value4"></h1>
                             </div>
                         </div>
                     </div>
+                    <hr />
+                    <h2 class="mb-4">
+                            <b>Thank you for checking out our project!</b>
+                        </h2>
                 </div>
 
             </div>
@@ -78,21 +79,22 @@
             <div class="col-lg-6 mx-auto">
                 <div class="card bg-light pr-5 pl-5 pt-3">
                     <div class="card-heading">
-                        <h4 class="card-title">If interested in learning about us, please fill out this form:</h4>
+                        <h3 class="card-title"><b>Want to know more?</b></h3>
+                        <h4 class="card-title">Please fill out this form and we will send our info</h4>
                     </div>
                     <div class="card-body">
                         <form role="form">
                             <div class="form-group row">
                                 <label for="name-input">Name:</label>
-                                <input class="form-control" id="name-input" type="text">
+                                <input class="form-control" id="name-input" type="text" placeholder="Christopher Huynh">
                             </div>
                             <div class="form-group row">
                                 <label for="email-input">Email:</label>
-                                <input class="form-control" id="email-input" type="email">
+                                <input class="form-control" id="email-input" type="email" placeholder="pretty-clouds@cumulus.com">
                             </div>
                             <div class="form-group row">
                                 <label for="comment-input">Comments:</label>
-                                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+                                <textarea class="form-control" id="comment-input" rows="5" placeholder="Your project is A-M-A-Z-I-N-G!"></textarea>
                             </div>
                             <input class="btn btn-default pr-5 pl-5" id="add-user" type="submit" onclick="RunLoading()"></input>
                         </form>
